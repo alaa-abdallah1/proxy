@@ -6,7 +6,7 @@ To use the proxy server, send an HTTP request to the proxy server with the **x-t
 
 
 ```
-GET / HTTP/1.1
+Method / HTTP/1.1
 Host: http://localhost:8080 OR https://proxy-7fuy.onrender.com
 x-target-url: http://www.example.com
 ```
