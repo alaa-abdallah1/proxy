@@ -1,5 +1,5 @@
-# GitHub Proxy
-This GitHub repository contains a simple proxy server that can be used to forward HTTP requests to a target server. The proxy server is designed to receive a header with the request called **x-target-url**, which specifies the target server to proxy to.
+# Proxy Server
+This Proxy Server is a simple proxy server that can be used to forward HTTP requests to a target server. The proxy server is designed to receive a header with the request called **x-target-url**, which specifies the target server to proxy to.
 
 ## Usage
 To use the proxy server, send an HTTP request to the proxy server with the **x-target-url** header
