@@ -8,18 +8,15 @@ app.use(cors())
 
 const port = process.env.PORT || 8080
 
-app.get("/*", (req, res, next) => {
+app.all("*", (req, res, next) => {
   const target = req.headers["x-target-url"] || `http://localhost:${port}` // access the target URL on the server
 
   const options = {
     target, // target server to proxy
     changeOrigin: true, // changes the origin of the host header to the target URL
-    pathRewrite: {
-      "^/": "/", // rewrite the path "/" to "/"
-    },
   }
 
-  const apiProxy = createProxyMiddleware(options)
+  const apiProxy = createProxyMiddleware("/", options)
 
   apiProxy(req, res, next) // Call the proxy middleware
 })
