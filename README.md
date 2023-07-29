@@ -6,10 +6,35 @@ To use the proxy server, send an HTTP request to the proxy server with the **x-t
 
 
 ```
-Method / HTTP/1.1
+Method: / HTTP/1.1
 Host: http://localhost:8080 OR https://proxy-7fuy.onrender.com
 x-target-url: http://www.example.com
 ```
+
+#### Axios Example
+```
+
+const axios = require('axios');
+
+const url = 'http://localhost:8080'; // or https://proxy-7fuy.onrender.com
+const targetUrl = 'http://www.example.com';
+
+axios({
+  method: 'get',
+  url: url,
+  headers: {
+    'x-target-url': targetUrl
+  }
+})
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+```
+
 This request will forward the request to http://www.example.com and return the response to the client.
 
 You can use the proxy server locally by running the server on your own machine, or you can use the online version hosted at https://proxy-7fuy.onrender.com.
